@@ -1,0 +1,2 @@
+for run test:
+py.test -s -v lesson_1\test_lesson_1_1.py
