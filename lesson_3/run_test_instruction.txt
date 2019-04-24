@@ -1,0 +1,2 @@
+for run test:
+pytest -p no:warnings --url={dog.ceo, openbrewerydb.org, cdnjs.com, all} test_lesson_3.py
