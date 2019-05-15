@@ -3,6 +3,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as Chrome_options
 from selenium.webdriver.firefox.options import Options as Firefox_options
+from LoginPage import LoginPage
 
 
 def pytest_addoption(parser):
@@ -64,3 +65,36 @@ def get_driver(request, cmdopt_browser, cmdopt_window):
 
     request.addfinalizer(close_driver)
     return driver
+
+
+@pytest.fixture
+def login_positive(get_driver, cmdopt_url):
+    """fixture to test positive scenario"""
+    login_page = LoginPage(get_driver, cmdopt_url)
+    login_page.navigate()
+    login_page.login("admin", "admin")
+    current_result = login_page.get_title()
+    expected_result = "Dashboard"
+    return expected_result, current_result
+
+
+@pytest.fixture
+def login_negative(get_driver, cmdopt_url):
+    """fixture to test negative scenario"""
+    login_page = LoginPage(get_driver, cmdopt_url)
+    login_page.navigate()
+    login_page.login("admin", "admin1")
+    current_result = login_page.get_alert()
+    expected_result = "No match for Username and/or Password."
+    return expected_result, current_result
+
+
+@pytest.fixture
+def empty_form(get_driver, cmdopt_url):
+    """fixture to empty login form scenario"""
+    login_page = LoginPage(get_driver, cmdopt_url)
+    login_page.navigate()
+    login_page.login("", "")
+    current_result = login_page.get_alert()
+    expected_result = "No match for Username and/or Password."
+    return expected_result, current_result

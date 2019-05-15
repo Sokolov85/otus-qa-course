@@ -1,20 +1,19 @@
 """Module with testsuite of tests for JSON API tests"""
-from LoginPage import LoginPage
 
 
 class TestSuite:
     """Testsuite for base page tests"""
-
-    def test_login_positive(self, get_driver, cmdopt_url):
+    def test_login_positive(self, login_positive):
         """login test positive scenario"""
-        login_page = LoginPage(get_driver, cmdopt_url)
-        login_page.navigate()
-        login_page.login("admin", "admin")
-        assert "Dashboard" in login_page.get_title()
+        expected_result, current_result = login_positive
+        assert expected_result in current_result
 
-    def test_login_negative(self, get_driver, cmdopt_url):
+    def test_login_negative(self, login_negative):
         """login test negative scenario"""
-        login_page = LoginPage(get_driver, cmdopt_url)
-        login_page.navigate()
-        login_page.login("admin", "admin1")
-        assert "No match for Username and/or Password." in login_page.get_alert()
+        expected_result, current_result = login_negative
+        assert expected_result in current_result
+
+    def test_empty_form(self, empty_form):
+        """empty login form scenario"""
+        expected_result, current_result = empty_form
+        assert expected_result in current_result
