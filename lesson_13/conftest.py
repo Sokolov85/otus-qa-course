@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as Chrome_options
 from selenium.webdriver.firefox.options import Options as Firefox_options
 from pages import LoginPage
-from pages import ConstuctorPage
+from pages import DownloadsPage
 import time
 
 
@@ -14,7 +14,7 @@ def pytest_addoption(parser):
         "--browser_type", action="store", default="ie", help="browser option"
     )
     parser.addoption(
-        "--url", action="store", default="http://demo23.opencart.pro/admin", help="url option"
+        "--url", action="store", default="http://127.0.0.1/opencart/admin", help="url option"
     )
     parser.addoption(
         "--window_option", action="store", default="window", help="window option"
@@ -101,8 +101,8 @@ def add_waits(get_driver, cmdopt_wait_time):
 @pytest.fixture
 def login_param():
     """fixture for storage login&password"""
-    login = "demo"
-    password = "demo"
+    login = "admin"
+    password = "admin"
     return login, password
 
 
@@ -117,13 +117,8 @@ def login(add_waits, cmdopt_url, login_param):
 
 
 @pytest.fixture
-def drag_drop(add_waits, login):
+def download(add_waits, login):
     """fixture to drag&drop test"""
-    constructor_page = ConstuctorPage(add_waits, login)
-    constructor_page.navigate()
-    coordinate_before_dnd = constructor_page.get_element_y_coordinates_before_dnd()
-    constructor_page.dnd()
-    coordinate_after_dnd = constructor_page.get_element_y_coordinates_after_dnd()
-    current_result = (coordinate_before_dnd == coordinate_after_dnd)
-    expected_result = True
-    return expected_result, current_result
+    download_page = DownloadsPage(add_waits, login)
+    download_page.navigate()
+    return True

@@ -1,12 +1,15 @@
 """Module contains Page-object classes"""
 from locators import MainPageLocators
-from locators import ConctructorPageLocators
+from locators import DownloadsPageLocators
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+import time
+import os
 
 
 class BasePage(object):
@@ -87,7 +90,7 @@ class LoginPage(BasePage):
 
     def _click_login_button_(self, by, value, delay=5):
         try:
-            WebDriverWait(self.driver, delay).until(EC.text_to_be_present_in_element((by, value), "Войти"))
+            WebDriverWait(self.driver, delay).until(EC.text_to_be_present_in_element((by, value), "Login"))
             self.driver.find_element(by, value).click()
         except (NoSuchElementException, TimeoutException) as err:
             raise err
@@ -103,29 +106,75 @@ class LoginPage(BasePage):
         self._click_login_button_(*MainPageLocators.BUTTON_LOGIN)
 
 
-class ConstuctorPage(BasePage):
-    """Constructor page class"""
+class DownloadsPage(BasePage):
+    """Downloads page class"""
     def navigate(self):
         """Public method to page navigate"""
         token = self.get_token()
-        self.driver.get(ConctructorPageLocators.CONSTRUCTOR_PAGE_URL + token)
+        self.driver.get(DownloadsPageLocators.DOWNLOADS_PAGE_URL + token)
         self.driver.maximize_window()
+        self.driver.find_element(*DownloadsPageLocators.BUTTON_ADD_NEW).click()
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, 'picture.JPG')
+        self.driver.find_element(*DownloadsPageLocators.INPUT_DOWNLOAD_DESCRIPTION).send_keys('new_1')
+        self.driver.find_element(*DownloadsPageLocators.INPUT_MASK).send_keys("new_1")
 
-    def _get_element_y_coordinates_(self, by, value):
-        element = self.driver.find_element(by, value)
-        element_y_coordinates = element.location['y']
-        return element_y_coordinates
+        jscode_1 = '''
+            $(document).ready(function(){
+                $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+                $('#form-upload input[name=\\'file\\']');
+            })
+        '''
 
-    def get_element_y_coordinates_before_dnd(self):
-        """Public method to get y coordinate before d&d"""
-        return self._get_element_y_coordinates_(*ConctructorPageLocators.PRODUCT_ITEM_1)
+        jscode_4 = '''
+                            if (typeof timer != 'undefined') {
+                                clearInterval(timer);
+                            }
 
-    def get_element_y_coordinates_after_dnd(self):
-        """Public method to get y coordinate after d&d"""
-        return self._get_element_y_coordinates_(*ConctructorPageLocators.PRODUCT_ITEM_2)
+                            timer = setInterval(function() {
+                                if ($('#form-upload input[name=\\'file\\']').val() != '') {
+                                    clearInterval(timer);
 
-    def dnd(self):
-        """Public method to drag&drop"""
-        source_element = self.driver.find_element(*ConctructorPageLocators.PRODUCT_ITEM_1)
-        dest_element = self.driver.find_element(*ConctructorPageLocators.PRODUCT_ITEM_2)
-        ActionChains(self.driver).drag_and_drop(source_element, dest_element).perform()
+                                    $.ajax({
+                                        url: 'http://127.0.0.1/opencart/admin/index.php?route=catalog/download/upload&user_token=''' + str(self._get_token_()) + '''',
+                                        type: 'post',
+                                        dataType: 'json',
+                                        data: new FormData($('#form-upload')[0]),
+                                        cache: false,
+                                        contentType: false,
+                                        processData: false,
+        								beforeSend: function() {
+        									$('#button-upload').button('loading');
+        								},
+        								complete: function() {
+        									$('#button-upload').button('reset');
+        								},
+        								success: function(json) {
+        									if (json['error']) {
+        										alert(json['error']);
+        									}
+
+        									if (json['success']) {
+        										alert(json['success']);
+
+        										$('input[name=\\'filename\\']').val(json['filename']);
+        										$('input[name=\\'mask\\']').val(json['mask']);
+        									}
+        								},
+        								error: function(xhr, ajaxOptions, thrownError) {
+        									alert(thrownError + xhr.statusText + xhr.responseText);
+                                        }
+                                    });
+                                }
+                            }, 500);
+        '''
+
+        self.driver.execute_script(jscode_1)
+        time.sleep(5)
+        self.driver.find_element_by_xpath("//input[@name='filename']").send_keys(filename)
+        self.driver.find_element_by_xpath("//input[@name='file']").send_keys(filename)
+        self.driver.execute_script(jscode_4)
+        ActionChains(self.driver).send_keys(Keys.ESCAPE).perform()
+        self.driver.find_element(*DownloadsPageLocators.BUTTON_SAVE).click()
+        time.sleep(5)
+
