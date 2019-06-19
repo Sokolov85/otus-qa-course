@@ -6,9 +6,6 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-import time
 import os
 
 
@@ -33,6 +30,23 @@ class BasePage(object):
     def _click_close_modal_window_button_(self):
         self._wait_element_(*MainPageLocators.CLOSE_MODAL_WINDOW).click()
 
+    def _get_url_(self):
+        return self.driver.current_url
+
+    def _get_token_(self):
+        text = self.get_url()
+        start = (text.find('token=') + 6)
+        return str(text[start:])
+
+    def _get_alert_(self, by, value, delay=5):
+        try:
+            WebDriverWait(self.driver, delay).until(EC.alert_is_present())
+            element = self.driver.find_element(by, value)
+            return element.text
+        except NoAlertPresentException as err:
+            raise err
+            return False
+
     def get_title(self):
         """public method to get page title"""
         return self._get_title_()
@@ -46,14 +60,6 @@ class BasePage(object):
         """public method to close modal window"""
         self._click_close_modal_window_button_()
 
-    def _get_url_(self):
-        return self.driver.current_url
-
-    def _get_token_(self):
-        text = self.get_url()
-        start = (text.find('token=') + 6)
-        return str(text[start:])
-
     def get_url(self):
         """public method to get window url"""
         return self._get_url_()
@@ -65,15 +71,6 @@ class BasePage(object):
 
 class LoginPage(BasePage):
     """Login page class"""
-    def _get_alert_(self, by, value, delay=5):
-        try:
-            WebDriverWait(self.driver, delay).until(EC.alert_is_present())
-            element = self.driver.find_element(by, value)
-            return element.text
-        except NoAlertPresentException as err:
-            raise err
-            return False
-
     def _set_username_(self, username, by, value, delay=5):
         try:
             WebDriverWait(self.driver, delay).until(EC.presence_of_element_located((by, value)))
@@ -108,25 +105,39 @@ class LoginPage(BasePage):
 
 class DownloadsPage(BasePage):
     """Downloads page class"""
+    def _get_file_alert_(self, by, value, delay=5):
+        try:
+            WebDriverWait(self.driver, delay).until(EC.presence_of_element_located((by, value)))
+            element = self.driver.find_element(by, value)
+            return element.text
+        except NoAlertPresentException as err:
+            raise err
+            return False
+
     def navigate(self):
         """Public method to page navigate"""
         token = self.get_token()
         self.driver.get(DownloadsPageLocators.DOWNLOADS_PAGE_URL + token)
         self.driver.maximize_window()
+
+    def get_file_alert(self):
+        """public method to get add file alert"""
+        return self._get_file_alert_(*DownloadsPageLocators.ADD_FILE_ALERT)
+
+    def add_picture(self, description, mask):
+        """Public method to add picture"""
         self.driver.find_element(*DownloadsPageLocators.BUTTON_ADD_NEW).click()
         dirname = os.path.dirname(__file__)
-        filename = os.path.join(dirname, 'picture.JPG')
-        self.driver.find_element(*DownloadsPageLocators.INPUT_DOWNLOAD_DESCRIPTION).send_keys('new_1')
-        self.driver.find_element(*DownloadsPageLocators.INPUT_MASK).send_keys("new_1")
-
-        jscode_1 = '''
+        filename = os.path.join(dirname, DownloadsPageLocators.PICTURE_FILE_NAME)
+        self.driver.find_element(*DownloadsPageLocators.INPUT_DOWNLOAD_DESCRIPTION).send_keys(description)
+        self.driver.find_element(*DownloadsPageLocators.INPUT_MASK).send_keys(mask)
+        JSCODE_1 = '''
             $(document).ready(function(){
                 $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
                 $('#form-upload input[name=\\'file\\']');
             })
         '''
-
-        jscode_4 = '''
+        JSCODE_4 = '''
                             if (typeof timer != 'undefined') {
                                 clearInterval(timer);
                             }
@@ -169,12 +180,10 @@ class DownloadsPage(BasePage):
                             }, 500);
         '''
 
-        self.driver.execute_script(jscode_1)
-        time.sleep(5)
-        self.driver.find_element_by_xpath("//input[@name='filename']").send_keys(filename)
-        self.driver.find_element_by_xpath("//input[@name='file']").send_keys(filename)
-        self.driver.execute_script(jscode_4)
-        ActionChains(self.driver).send_keys(Keys.ESCAPE).perform()
+        self.driver.execute_script(JSCODE_1)
+        self.driver.find_element(*DownloadsPageLocators.INPUT_MANAGER).send_keys(filename)
+        self.driver.execute_script(JSCODE_4)
+        WebDriverWait(self.driver, 10).until(EC.alert_is_present())
+        self.driver.switch_to.alert.accept()
         self.driver.find_element(*DownloadsPageLocators.BUTTON_SAVE).click()
-        time.sleep(5)
 

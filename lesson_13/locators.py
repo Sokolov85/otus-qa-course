@@ -41,3 +41,5 @@ class DownloadsPageLocators(object):
     INPUT_DOWNLOAD_DESCRIPTION = (By.XPATH, "//input[@name='download_description[1][name]']")
     INPUT_MASK = (By.XPATH, "//input[@name='mask']")
     BUTTON_SAVE = (By.XPATH, "//button[@class='btn btn-primary']")
+    PICTURE_FILE_NAME = 'picture.JPG'
+    ADD_FILE_ALERT = (By.XPATH, "//div[@class='alert alert-success alert-dismissible']")

@@ -1,10 +1,11 @@
-"""Module with testsuite of tests for JSON API tests"""
+"""Module with testsuite of tests"""
 
 
 class TestSuite:
-    """Testsuite for drag$drop tests on custom menu page"""
-    def test_login(self, login, download):
-        """add product test positive scenario"""
+    """Testsuite for upload picture tests on download menu page"""
+    def test_login(self, login, add_picture):
+        """add file test"""
         login
-        download
-        assert True
+        add_picture
+        expected_result, current_result = add_picture
+        assert expected_result in current_result

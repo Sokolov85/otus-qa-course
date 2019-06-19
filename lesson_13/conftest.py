@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.options import Options as Chrome_options
 from selenium.webdriver.firefox.options import Options as Firefox_options
 from pages import LoginPage
 from pages import DownloadsPage
-import time
 
 
 def pytest_addoption(parser):
@@ -107,6 +106,14 @@ def login_param():
 
 
 @pytest.fixture
+def picture_params():
+    """fixture for storage description&mask"""
+    description = 'new_1'
+    mask = 'new_1'
+    return description, mask
+
+
+@pytest.fixture
 def login(add_waits, cmdopt_url, login_param):
     """fixture to login"""
     login_page = LoginPage(add_waits, cmdopt_url)
@@ -117,8 +124,12 @@ def login(add_waits, cmdopt_url, login_param):
 
 
 @pytest.fixture
-def download(add_waits, login):
-    """fixture to drag&drop test"""
+def add_picture(add_waits, login, picture_params):
+    """fixture to add picture test for download page"""
     download_page = DownloadsPage(add_waits, login)
     download_page.navigate()
-    return True
+    description, mask = picture_params
+    download_page.add_picture(description, mask)
+    current_result = download_page.get_file_alert()
+    expected_result = "Success: You have modified downloads!"
+    return expected_result, current_result
