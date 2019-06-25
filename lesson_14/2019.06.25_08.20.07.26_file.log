@@ -1,0 +1,84 @@
+Before navigate to http://127.0.0.1/opencart/admin
+After navigate to http://127.0.0.1/opencart/admin
+Before find xpath //input[@id='input-username']
+After find xpath //input[@id='input-username']
+Before find xpath //input[@id='input-username']
+After find xpath //input[@id='input-username']
+Before find xpath //input[@id='input-password']
+After find xpath //input[@id='input-password']
+Before find xpath //input[@id='input-password']
+After find xpath //input[@id='input-password']
+Before find xpath //button[@class='btn btn-primary'][@type='submit']
+After find xpath //button[@class='btn btn-primary'][@type='submit']
+Before find xpath //button[@class='btn btn-primary'][@type='submit']
+After find xpath //button[@class='btn btn-primary'][@type='submit']
+Before click btn btn-primary
+After click
+Before find xpath //button[@class='close']
+After find xpath //button[@class='close']
+Before find xpath //button[@class='close']
+After find xpath //button[@class='close']
+Before click close
+After click
+Before navigate to http://127.0.0.1/opencart/admin/index.php?route=common/dashboard&user_token=tFoq6NTv2tJ1303b8L3uMs3fDnJ3qnzG
+After navigate to http://127.0.0.1/opencart/admin/index.php?route=common/dashboard&user_token=tFoq6NTv2tJ1303b8L3uMs3fDnJ3qnzG
+Before find xpath //button[@class='close']
+After find xpath //button[@class='close']
+Before find xpath //button[@class='close']
+After find xpath //button[@class='close']
+Before click close
+After click
+Before find xpath //a[@class='parent collapsed']
+After find xpath //a[@class='parent collapsed']
+Before find xpath //a[@class='parent collapsed']
+After find xpath //a[@class='parent collapsed']
+Before click parent collapsed
+After click
+Before find tag name li
+After find tag name li
+Before find tag name li
+After find tag name li
+Before click 
+After click
+Before navigate to http://127.0.0.1/opencart/admin/index.php?route=catalog/product&user_token=tFoq6NTv2tJ1303b8L3uMs3fDnJ3qnzG
+After navigate to http://127.0.0.1/opencart/admin/index.php?route=catalog/product&user_token=tFoq6NTv2tJ1303b8L3uMs3fDnJ3qnzG
+Before find xpath //a[@class='btn btn-primary']
+After find xpath //a[@class='btn btn-primary']
+Before find xpath //a[@class='btn btn-primary']
+After find xpath //a[@class='btn btn-primary']
+Before click btn btn-primary
+After click
+Before find tag name li
+After find tag name li
+Before find tag name li
+After find tag name li
+Before click active
+After click
+Before find id input-name1
+After find id input-name1
+Before find id input-name1
+After find id input-name1
+Before find id input-meta-title1
+After find id input-meta-title1
+Before find id input-meta-title1
+After find id input-meta-title1
+Before find tag name li
+After find tag name li
+Before find tag name li
+After find tag name li
+Before click 
+After click
+Before find id input-model
+After find id input-model
+Before find id input-model
+After find id input-model
+Before find xpath //button[@class='btn btn-primary']
+After find xpath //button[@class='btn btn-primary']
+Before find xpath //button[@class='btn btn-primary']
+After find xpath //button[@class='btn btn-primary']
+Before click btn btn-primary
+After click
+Before find xpath //div[@class='alert alert-success alert-dismissible']
+After find xpath //div[@class='alert alert-success alert-dismissible']
+Before find xpath //div[@class='alert alert-success alert-dismissible']
+After find xpath //div[@class='alert alert-success alert-dismissible']
