@@ -1,0 +1,2 @@
+for run test:
+pytest -p no:warnings --ip=127.0.0.1 test_lesson_21.py
