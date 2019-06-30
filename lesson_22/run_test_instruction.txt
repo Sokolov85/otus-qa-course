@@ -1,0 +1,2 @@
+for run test:
+pytest --url="127.0.0.1" --method="GET" --header="HTTP/1.0" --port=80 test_lesson_22.py
