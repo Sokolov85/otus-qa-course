@@ -2,6 +2,7 @@
 import datetime
 import logging
 import urllib.parse
+import sqlite3
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as Chrome_options
@@ -12,7 +13,6 @@ from browsermobproxy import Server
 from pages import LoginPage
 from pages import AdminPage
 from pages import ProductPage
-import sqlite3
 
 
 def log():
@@ -37,7 +37,7 @@ class MyListener(AbstractEventListener):
         self.logdb_filename = (self.log_timestamp + '_log.sqlite3')
         self.logdb = sqlite3.connect(self.logdb_filename)
         self.cursor = self.logdb.cursor()
-        self.cursor.execute("CREATE TABLE log (timestamp text, message text)")
+        self.cursor.execute("CREATE TABLE log (timestamp a_string, message a_string)")
         self.logdb.commit()
         self.logdb.close()
         log()
@@ -52,7 +52,7 @@ class MyListener(AbstractEventListener):
         self.logdb = sqlite3.connect(self.logdb_filename)
         self.cursor = self.logdb.cursor()
         timestamp = str(datetime.datetime.now())[0:-4].replace('-', '.').replace(' ', '_').replace(':', '.')
-        self.cursor.execute("INSERT INTO log VALUES ('{}','{}')".format(timestamp, entry))
+        self.cursor.execute("INSERT INTO log VALUES ('{}', '{}')".format(timestamp, entry))
         self.logdb.commit()
         self.logdb.close()
 
@@ -71,13 +71,15 @@ class MyListener(AbstractEventListener):
     def before_find(self, by, value, driver):
         print("Before find {} {}".format(by, value))
         self._write_log_("Before find {} {}".format(by, value))
-        #self._write_log_db_(r'Before find {} {}'.format(by, value))
+        value = value.replace("'", '"')
+        self._write_log_db_('Before find {} {}'.format(by, value))
         self.logger.info("Before find {} {}".format(by, value))
 
     def after_find(self, by, value, driver):
         print("After find {} {}".format(by, value))
         self._write_log_("After find {} {}".format(by, value))
-        #self._write_log_db_(r'After find {} {}'.format(by, value))
+        value = value.replace("'", '"')
+        self._write_log_db_('After find {} {}'.format(by, value))
         self.logger.info("After find {} {}".format(by, value))
 
     def before_click(self, element, driver):

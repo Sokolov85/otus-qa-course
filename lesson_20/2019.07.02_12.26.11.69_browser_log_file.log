@@ -1,0 +1,2 @@
+{'source': 'recommendation', 'timestamp': 1562059563090, 'message': 'http://127.0.0.1/opencart/admin/ - [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o', 'level': 'DEBUG'}
+{'source': 'network', 'timestamp': 1562059563281, 'message': 'http://127.0.0.1/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)', 'level': 'SEVERE'}

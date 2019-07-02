@@ -1,0 +1,86 @@
+2019-07-02 12:26:02,274 - WebTestApp - INFO - -----------------------------
+2019-07-02 12:26:02,275 - WebTestApp - INFO - Program started
+2019-07-02 12:26:02,283 - WebTestApp - INFO - Before navigate to http://127.0.0.1/opencart/admin
+2019-07-02 12:26:03,288 - WebTestApp - INFO - After navigate to http://127.0.0.1/opencart/admin
+2019-07-02 12:26:04,106 - WebTestApp - INFO - Before find xpath //input[@id="input-username"]
+2019-07-02 12:26:04,157 - WebTestApp - INFO - After find xpath //input[@id="input-username"]
+2019-07-02 12:26:04,167 - WebTestApp - INFO - Before find xpath //input[@id="input-username"]
+2019-07-02 12:26:04,209 - WebTestApp - INFO - After find xpath //input[@id="input-username"]
+2019-07-02 12:26:04,286 - WebTestApp - INFO - Before find xpath //input[@id="input-password"]
+2019-07-02 12:26:04,311 - WebTestApp - INFO - After find xpath //input[@id="input-password"]
+2019-07-02 12:26:04,317 - WebTestApp - INFO - Before find xpath //input[@id="input-password"]
+2019-07-02 12:26:04,344 - WebTestApp - INFO - After find xpath //input[@id="input-password"]
+2019-07-02 12:26:04,440 - WebTestApp - INFO - Before find xpath //button[@class="btn btn-primary"][@type="submit"]
+2019-07-02 12:26:04,513 - WebTestApp - INFO - After find xpath //button[@class="btn btn-primary"][@type="submit"]
+2019-07-02 12:26:04,550 - WebTestApp - INFO - Before find xpath //button[@class="btn btn-primary"][@type="submit"]
+2019-07-02 12:26:04,574 - WebTestApp - INFO - After find xpath //button[@class="btn btn-primary"][@type="submit"]
+2019-07-02 12:26:04,610 - WebTestApp - INFO - Before click btn btn-primary
+2019-07-02 12:26:05,410 - WebTestApp - INFO - After click
+2019-07-02 12:26:05,418 - WebTestApp - INFO - Before find xpath //button[@class="close"]
+2019-07-02 12:26:05,465 - WebTestApp - INFO - After find xpath //button[@class="close"]
+2019-07-02 12:26:05,470 - WebTestApp - INFO - Before find xpath //button[@class="close"]
+2019-07-02 12:26:05,486 - WebTestApp - INFO - After find xpath //button[@class="close"]
+2019-07-02 12:26:05,511 - WebTestApp - INFO - Before click close
+2019-07-02 12:26:05,829 - WebTestApp - INFO - After click
+2019-07-02 12:26:05,852 - WebTestApp - INFO - Before navigate to http://127.0.0.1/opencart/admin/index.php?route=common/dashboard&user_token=S6Itho0Fzc3ZMc2VewVu2KMRWYs2nH92
+2019-07-02 12:26:06,117 - WebTestApp - INFO - After navigate to http://127.0.0.1/opencart/admin/index.php?route=common/dashboard&user_token=S6Itho0Fzc3ZMc2VewVu2KMRWYs2nH92
+2019-07-02 12:26:06,129 - WebTestApp - INFO - Before find xpath //button[@class="close"]
+2019-07-02 12:26:06,148 - WebTestApp - INFO - After find xpath //button[@class="close"]
+2019-07-02 12:26:06,165 - WebTestApp - INFO - Before find xpath //button[@class="close"]
+2019-07-02 12:26:06,179 - WebTestApp - INFO - After find xpath //button[@class="close"]
+2019-07-02 12:26:06,197 - WebTestApp - INFO - Before click close
+2019-07-02 12:26:06,240 - WebTestApp - INFO - After click
+2019-07-02 12:26:06,247 - WebTestApp - INFO - Before find xpath //a[@class="parent collapsed"]
+2019-07-02 12:26:06,296 - WebTestApp - INFO - After find xpath //a[@class="parent collapsed"]
+2019-07-02 12:26:06,306 - WebTestApp - INFO - Before find xpath //a[@class="parent collapsed"]
+2019-07-02 12:26:06,334 - WebTestApp - INFO - After find xpath //a[@class="parent collapsed"]
+2019-07-02 12:26:06,382 - WebTestApp - INFO - Before click parent collapsed
+2019-07-02 12:26:06,447 - WebTestApp - INFO - After click
+2019-07-02 12:26:06,456 - WebTestApp - INFO - Before find tag name li
+2019-07-02 12:26:06,491 - WebTestApp - INFO - After find tag name li
+2019-07-02 12:26:06,500 - WebTestApp - INFO - Before find tag name li
+2019-07-02 12:26:06,535 - WebTestApp - INFO - After find tag name li
+2019-07-02 12:26:06,888 - WebTestApp - INFO - Before click 
+2019-07-02 12:26:07,231 - WebTestApp - INFO - After click
+2019-07-02 12:26:07,254 - WebTestApp - INFO - Before navigate to http://127.0.0.1/opencart/admin/index.php?route=catalog/product&user_token=S6Itho0Fzc3ZMc2VewVu2KMRWYs2nH92
+2019-07-02 12:26:07,470 - WebTestApp - INFO - After navigate to http://127.0.0.1/opencart/admin/index.php?route=catalog/product&user_token=S6Itho0Fzc3ZMc2VewVu2KMRWYs2nH92
+2019-07-02 12:26:07,494 - WebTestApp - INFO - Before find xpath //a[@class="btn btn-primary"]
+2019-07-02 12:26:07,520 - WebTestApp - INFO - After find xpath //a[@class="btn btn-primary"]
+2019-07-02 12:26:07,543 - WebTestApp - INFO - Before find xpath //a[@class="btn btn-primary"]
+2019-07-02 12:26:07,557 - WebTestApp - INFO - After find xpath //a[@class="btn btn-primary"]
+2019-07-02 12:26:07,580 - WebTestApp - INFO - Before click btn btn-primary
+2019-07-02 12:26:08,172 - WebTestApp - INFO - After click
+2019-07-02 12:26:08,181 - WebTestApp - INFO - Before find tag name li
+2019-07-02 12:26:08,208 - WebTestApp - INFO - After find tag name li
+2019-07-02 12:26:08,218 - WebTestApp - INFO - Before find tag name li
+2019-07-02 12:26:08,239 - WebTestApp - INFO - After find tag name li
+2019-07-02 12:26:09,497 - WebTestApp - INFO - Before click active
+2019-07-02 12:26:09,568 - WebTestApp - INFO - After click
+2019-07-02 12:26:09,573 - WebTestApp - INFO - Before find id input-name1
+2019-07-02 12:26:09,603 - WebTestApp - INFO - After find id input-name1
+2019-07-02 12:26:09,610 - WebTestApp - INFO - Before find id input-name1
+2019-07-02 12:26:09,628 - WebTestApp - INFO - After find id input-name1
+2019-07-02 12:26:09,767 - WebTestApp - INFO - Before find id input-meta-title1
+2019-07-02 12:26:09,789 - WebTestApp - INFO - After find id input-meta-title1
+2019-07-02 12:26:09,802 - WebTestApp - INFO - Before find id input-meta-title1
+2019-07-02 12:26:09,815 - WebTestApp - INFO - After find id input-meta-title1
+2019-07-02 12:26:09,933 - WebTestApp - INFO - Before find tag name li
+2019-07-02 12:26:09,955 - WebTestApp - INFO - After find tag name li
+2019-07-02 12:26:09,965 - WebTestApp - INFO - Before find tag name li
+2019-07-02 12:26:09,991 - WebTestApp - INFO - After find tag name li
+2019-07-02 12:26:10,824 - WebTestApp - INFO - Before click 
+2019-07-02 12:26:10,884 - WebTestApp - INFO - After click
+2019-07-02 12:26:10,892 - WebTestApp - INFO - Before find id input-model
+2019-07-02 12:26:10,917 - WebTestApp - INFO - After find id input-model
+2019-07-02 12:26:10,924 - WebTestApp - INFO - Before find id input-model
+2019-07-02 12:26:10,943 - WebTestApp - INFO - After find id input-model
+2019-07-02 12:26:11,064 - WebTestApp - INFO - Before find xpath //button[@class="btn btn-primary"]
+2019-07-02 12:26:11,100 - WebTestApp - INFO - After find xpath //button[@class="btn btn-primary"]
+2019-07-02 12:26:11,141 - WebTestApp - INFO - Before find xpath //button[@class="btn btn-primary"]
+2019-07-02 12:26:11,163 - WebTestApp - INFO - After find xpath //button[@class="btn btn-primary"]
+2019-07-02 12:26:11,185 - WebTestApp - INFO - Before click btn btn-primary
+2019-07-02 12:26:11,608 - WebTestApp - INFO - After click
+2019-07-02 12:26:11,621 - WebTestApp - INFO - Before find xpath //div[@class="alert alert-success alert-dismissible"]
+2019-07-02 12:26:11,644 - WebTestApp - INFO - After find xpath //div[@class="alert alert-success alert-dismissible"]
+2019-07-02 12:26:11,656 - WebTestApp - INFO - Before find xpath //div[@class="alert alert-success alert-dismissible"]
+2019-07-02 12:26:11,673 - WebTestApp - INFO - After find xpath //div[@class="alert alert-success alert-dismissible"]
