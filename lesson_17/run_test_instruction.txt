@@ -1,0 +1,3 @@
+for run test:
+
+pytest --url=http://demo23.opencart.pro/admin --browser_type=firefox --capture=no --verbose --html=test_lesson_17.html test_lesson_17.py
