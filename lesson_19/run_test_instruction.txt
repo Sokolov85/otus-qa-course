@@ -1,0 +1,5 @@
+for run test:
+
+pytest --folder=C:\Users\ssokolov\PycharmProjects\Otus_study\lesson_19 --file_name=access.log --file_number=one test_lesson_19.py
+
+test results stoted into data_file.json
