@@ -1,0 +1,7 @@
+for run test:
+pytest test_lesson_18.py --url=http://demo23.opencart.pro/admin --browser_type=firefox --capture=no --verbose --alluredir=C:\Users\ssokolov\PycharmProjects\Otus_study\lesson_18
+
+allure report generate:
+allure generate C:\Users\ssokolov\PycharmProjects\Otus_study\lesson_18 -o C:\Users\ssokolov\PycharmProjects\Otus_study\lesson_18\allure_report
+
+
