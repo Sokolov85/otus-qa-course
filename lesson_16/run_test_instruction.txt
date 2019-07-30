@@ -1,0 +1,4 @@
+for run test:
+pytest --url=http://demo23.opencart.pro/admin --browser_type={"ie", "firefox", "chrome"} --window_option={"window", "headless"} --waits=waits --wait_time=10 test_lesson_16.py
+
+pytest --url=http://demo23.opencart.pro/admin --browser_type=firefox test_lesson_16.py
