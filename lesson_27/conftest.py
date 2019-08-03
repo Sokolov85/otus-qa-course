@@ -52,7 +52,9 @@ def get_driver(request, cmdopt_browser, cmdopt_window):
     elif cmdopt_browser == "chrome":
         if cmdopt_window == "headless":
             options = Chrome_options()
-            options.headless = True
+            options.add_argument('--headless')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-dev-shm-usage')
             driver = webdriver.Chrome(chrome_options=options)
         else:
             driver = webdriver.Chrome()
