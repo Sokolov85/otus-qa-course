@@ -1,0 +1,2 @@
+for run test:
+pytest --url={"http://demo23.opencart.pro/admin"} --browser_type={"ie", "firefox", "chrome", "edge"} --window_option={"window", "headless"} test_lesson_6.py
