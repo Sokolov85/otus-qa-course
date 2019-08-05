@@ -11,6 +11,7 @@ cffi==1.12.3
 chardet==3.0.4
 colorama==0.4.1
 cricket==0.2.5
+cryptography==2.7
 idna==2.7
 importlib-metadata==0.18
 isort==4.3.17
