@@ -1,7 +1,4 @@
 pipeline {
-    agent {
-        docker { image 'eeacms/pep8' }
-    }
     stages {
         stage ("Code pull"){
             steps{
