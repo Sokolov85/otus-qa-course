@@ -1,10 +1,16 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker { image 'python:3.5.2' } }
+    agent {
+        docker { image 'eeacms/pep8' }
+    }
     stages {
-        stage('build') {
+        stage ("Code pull"){
+            steps{
+                checkout scm
+            }
+        }
+        stage('Run pep8'){
             steps {
-                sh 'python --version'
+                sh 'pep8 *'
             }
         }
     }
