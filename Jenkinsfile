@@ -17,7 +17,7 @@ pipeline {
         stage('Static code metrics') {
             steps {
                 echo "PEP8 style check"
-                sh  'pylint **/*.py'
+                sh  'pylint --disable=C **/*.py'
             }
         }
     }
