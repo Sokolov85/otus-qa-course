@@ -6,9 +6,12 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Run pep8'){
+        stage('Static code metrics') {
             steps {
-                sh 'pep8 *'
+                echo "PEP8 style check"
+                sh  ''' source activate ${BUILD_TAG}
+                        pylint --disable=C irisvmpy || true
+                    '''
             }
         }
     }
