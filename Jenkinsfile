@@ -9,8 +9,10 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
+                sh 'pip install -r requirements.txt'
             }
         }
+
         stage('Static code metrics') {
             steps {
                 echo "PEP8 style check"
