@@ -1,0 +1,13 @@
+pipeline {
+    agent {
+        docker { image 'otus-qa' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'python --version'
+                sh 'node --version'
+            }
+        }
+    }
+}
