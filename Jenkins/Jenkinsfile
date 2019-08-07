@@ -7,18 +7,21 @@ pipeline {
             steps {
                 sh 'python --version'
                 sh 'pytest --url=http://demo23.opencart.pro/admin --browser_type=chrome --window_option=headless lesson_27/test_lesson_27.py'
-            }
-        }
-        stage('Download') {
-            steps {
-                sh 'echo "artifact file" > generatedFile.txt'
+
+                publishHTML target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'coverage',
+                    reportFiles: 'index.html',
+                    reportName: 'RCov Report'
+                ]
             }
         }
     }
     post{
         always {
             archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
-            junit 'report.xml'
         }
 }
 }
