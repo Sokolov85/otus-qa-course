@@ -1,0 +1,55 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "children" : [ {
+      "name" : "test_lesson_17",
+      "children" : [ {
+        "name" : "TestSuite",
+        "children" : [ {
+          "name" : "test_login_positive",
+          "uid" : "14d2e349f6c9bfcd",
+          "parentUid" : "6886cba5c4da6e90e5732493b0dab275",
+          "status" : "passed",
+          "time" : {
+            "start" : 1564138241930,
+            "stop" : 1564138241930,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "test_login_negative",
+          "uid" : "8e8a6ae3a4ceaa78",
+          "parentUid" : "6886cba5c4da6e90e5732493b0dab275",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1564138243847,
+            "stop" : 1564138243847,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "test_empty_form",
+          "uid" : "a551ba8e0b4813c1",
+          "parentUid" : "6886cba5c4da6e90e5732493b0dab275",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1564138251438,
+            "stop" : 1564138251438,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "6886cba5c4da6e90e5732493b0dab275"
+      } ],
+      "uid" : "2c78336a095eefa706a40f9536839378"
+    } ],
+    "uid" : "84e4fb228aa5651a31b5ca4d2bc531de"
+  } ]
+}

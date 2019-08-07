@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Fri Jul 26 13:50:51 MSK 2019","Fri Jul 26 13:50:51 MSK 2019","0","","test_lesson_17","TestSuite","","","test_empty_form","empty login form scenario"
+"passed","Fri Jul 26 13:50:41 MSK 2019","Fri Jul 26 13:50:41 MSK 2019","0","","test_lesson_17","TestSuite","","","test_login_positive","login test positive scenario"
+"skipped","Fri Jul 26 13:50:43 MSK 2019","Fri Jul 26 13:50:43 MSK 2019","0","","test_lesson_17","TestSuite","","","test_login_negative","login test negative scenario"

@@ -1,0 +1,192 @@
+{
+  "uid" : "14d2e349f6c9bfcd",
+  "name" : "test_login_positive",
+  "fullName" : "test_lesson_17.TestSuite#test_login_positive",
+  "historyId" : "f1e45e4fd6b170282f5d8da801b49446",
+  "time" : {
+    "start" : 1564138241930,
+    "stop" : 1564138241930,
+    "duration" : 0
+  },
+  "description" : "login test positive scenario",
+  "descriptionHtml" : "<p>login test positive scenario</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "cmdopt_url",
+    "time" : {
+      "start" : 1564138239494,
+      "stop" : 1564138239494,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "configure_html_report_env",
+    "time" : {
+      "start" : 1564138235573,
+      "stop" : 1564138235573,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "cmdopt_browser",
+    "time" : {
+      "start" : 1564138235573,
+      "stop" : 1564138235573,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "packages_info",
+    "time" : {
+      "start" : 1564138235573,
+      "stop" : 1564138235573,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "environment_info",
+    "time" : {
+      "start" : 1564138235572,
+      "stop" : 1564138235572,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "get_driver",
+    "time" : {
+      "start" : 1564138235573,
+      "stop" : 1564138239493,
+      "duration" : 3920
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "login_positive",
+    "time" : {
+      "start" : 1564138239494,
+      "stop" : 1564138241913,
+      "duration" : 2419
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "configure_html_report_env::0",
+    "time" : {
+      "start" : 1564138261304,
+      "stop" : 1564138261304,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "get_driver::fin",
+    "time" : {
+      "start" : 1564138241953,
+      "stop" : 1564138243842,
+      "duration" : 1889
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestSuite"
+  }, {
+    "name" : "suite",
+    "value" : "test_lesson_17"
+  }, {
+    "name" : "host",
+    "value" : "ipm-fz-pcl116"
+  }, {
+    "name" : "thread",
+    "value" : "16048-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_lesson_17"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "14d2e349f6c9bfcd.json",
+  "parameterValues" : [ ]
+}

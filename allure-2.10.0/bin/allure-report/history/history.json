@@ -1,0 +1,61 @@
+{
+  "789c9372cceb6a8966d7176f47f81aae" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a551ba8e0b4813c1",
+      "status" : "skipped",
+      "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //div[@class='alert alert-danger alert-dismissible']",
+      "time" : {
+        "start" : 1564138251438,
+        "stop" : 1564138251438,
+        "duration" : 0
+      }
+    } ]
+  },
+  "0b72d056957a5b1305a41fee9ae4a03f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8e8a6ae3a4ceaa78",
+      "status" : "skipped",
+      "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //div[@class='alert alert-danger alert-dismissible']",
+      "time" : {
+        "start" : 1564138243847,
+        "stop" : 1564138243847,
+        "duration" : 0
+      }
+    } ]
+  },
+  "f1e45e4fd6b170282f5d8da801b49446" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "14d2e349f6c9bfcd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1564138241930,
+        "stop" : 1564138241930,
+        "duration" : 0
+      }
+    } ]
+  }
+}
