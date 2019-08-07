@@ -16,7 +16,7 @@ pipeline {
               allowMissing: false,
               alwaysLinkToLastBuild: false,
               keepAll: true,
-              reportDir: '.',
+              reportDir: 'var/jenkins_home/jobs/otus-qa/branches/master/builds',
               reportFiles: 'index.html',
               reportName: 'HTML Report'
             ]
