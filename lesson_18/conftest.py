@@ -3,7 +3,7 @@ import os
 import pkg_resources
 import pytest
 from selenium import webdriver
-from LoginPage import LoginPage
+from .LoginPage import LoginPage
 
 
 def pytest_addoption(parser):

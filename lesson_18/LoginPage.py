@@ -1,5 +1,5 @@
 """Module contains Page-object classes"""
-from locators import MainPageLocators
+from .locators import MainPageLocators
 
 
 class BasePage(object):
