@@ -6,20 +6,19 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'python --version'
-                sh 'pytest --url=http://demo23.opencart.pro/admin --browser_type=chrome --window_option=headless lesson_27/test_lesson_27.py'
+                sh 'pytest lesson_18/test_lesson_18.py --url=http://demo23.opencart.pro/admin --browser_type=chrome --capture=no --verbose --alluredir=../report'
             }
         }
     }
     post{
         always {
-          publishHTML target: [
-              allowMissing: false,
-              alwaysLinkToLastBuild: false,
-              keepAll: true,
-              reportDir: '',
-              reportFiles: 'index.html',
-              reportName: 'HTML Report'
-            ]
+            allure([
+                includeProperties: true,
+                jdk              : '',
+                properties       : [],
+                reportBuildPolicy: 'ALWAYS',
+                results          : [[path: 'report']]
+            ])
         }
-}
+    }
 }
