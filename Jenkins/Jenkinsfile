@@ -9,10 +9,15 @@ pipeline {
                 sh 'pytest --url=http://demo23.opencart.pro/admin --browser_type=chrome --window_option=headless lesson_27/test_lesson_27.py'
             }
         }
-    }
-    post{
-        always{
-            archiveArtifacts artifacts: 'generatedFile.txt', fingerprint: true
+        stage('Download') {
+            steps {
+                sh 'echo "artifact file" > generatedFile.txt'
+            }
         }
     }
+    post{
+        always {
+            archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
+        }
+}
 }
