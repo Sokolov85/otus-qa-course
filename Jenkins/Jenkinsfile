@@ -6,7 +6,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'python --version'
-                sh 'pytest lesson_18/test_lesson_18.py --url=http://demo23.opencart.pro/admin --browser_type=firefox --capture=no --verbose --alluredir=../report'
+                sh 'pytest lesson_18/test_lesson_18.py --url=http://demo23.opencart.pro/admin --browser_type=chrome --capture=no --verbose --alluredir=../report'
             }
         }
     }
