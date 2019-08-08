@@ -2,6 +2,10 @@ pipeline {
     agent {
         docker { image 'otus-qa' }
     }
+    environment {
+        JAVA_HOME = "${tool 'jdk'}"
+        PATH    = "${env.JAVA_HOME}/bin:${env.PATH}"
+    }
     stages {
         stage('Test') {
             steps {
@@ -9,9 +13,7 @@ pipeline {
                 sh 'pytest --url=http://demo23.opencart.pro/admin --browser_type=chrome --window_option=headless lesson_27/test_lesson_27.py'
                 sh 'pytest lesson_18/test_lesson_18.py --url=http://demo23.opencart.pro/admin --browser_type=chrome --capture=no --verbose --alluredir=report'
                 dir("allure-2.10.0/bin") {
-                    sh "pwd"
-                    sh 'ls'
-                    sh 'allure generate --clean "../../report" -o "../../report_build"'
+                    sh 'allure generate --clean ../../report -o ../../report_build'
                 }
                 sh 'ls'
             }
