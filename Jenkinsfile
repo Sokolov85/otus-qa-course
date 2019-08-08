@@ -2,7 +2,7 @@ pipeline {
     agent { docker { image 'python:3.5.1' } }
 
     environment {
-        JAVA_HOME = "/usr/lib/jvm/java-1.8-openjdk"
+        JAVA_HOME = "/usr/lib/jvm/java-1.8-openjdk/jre/bi"
         PATH    = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin"
     }
     stages {
