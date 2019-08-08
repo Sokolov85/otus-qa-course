@@ -3,6 +3,7 @@ import os
 import pkg_resources
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options as Chrome_options
 from .LoginPage import LoginPage
 
 
@@ -38,7 +39,11 @@ def get_driver(request, cmdopt_browser):
     elif cmdopt_browser == "firefox":
         driver = webdriver.Firefox()
     elif cmdopt_browser == "chrome":
-        driver = webdriver.Chrome()
+        options = Chrome_options()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        driver = webdriver.Chrome(chrome_options=options)
     else:
         return "unsupported browser"
 
