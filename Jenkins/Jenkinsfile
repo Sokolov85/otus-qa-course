@@ -8,9 +8,6 @@ pipeline {
                 sh 'python --version'
                 sh 'pytest --url=http://demo23.opencart.pro/admin --browser_type=chrome --window_option=headless lesson_27/test_lesson_27.py'
                 sh 'pytest lesson_18/test_lesson_18.py --url=http://demo23.opencart.pro/admin --browser_type=chrome --capture=no --verbose --alluredir=report'
-//                sh 'cd allure-2.10.0/bin'
-//                sh 'allure generate --clean ../../report -o ../../report_build'
-
             }
         }
     }
