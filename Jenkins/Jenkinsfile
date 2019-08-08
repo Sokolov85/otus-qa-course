@@ -3,8 +3,7 @@ pipeline {
         docker { image 'otus-qa' }
     }
     environment {
-        JAVA_HOME = "usr/lib/jvm/java-1.8-openjdk/jre/bin"
-        PATH    = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin"
+        JAVA_HOME = "usr/lib/jvm/java-1.8-openjdk"
     }
     stages {
         stage('Test') {
