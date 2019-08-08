@@ -11,7 +11,7 @@ pipeline {
                 dir("allure-2.10.0/bin") {
                     sh "pwd"
                     sh 'ls'
-                    sh 'allure generate --clean ../../report -o ../../report_build'
+                    sh 'allure generate --clean "../../report" -o "../../report_build"'
                 }
                 sh 'ls'
             }
