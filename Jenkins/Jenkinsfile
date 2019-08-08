@@ -10,10 +10,10 @@ pipeline {
                 sh 'pytest lesson_18/test_lesson_18.py --url=http://demo23.opencart.pro/admin --browser_type=chrome --capture=no --verbose --alluredir=report'
                 dir("allure-2.10.0/bin") {
                     sh "pwd"
+                    sh 'ls'
+                    sh 'allure generate --clean ../../report -o ../../report_build'
                 }
                 sh 'ls'
-                sh 'allure generate --clean ../../report -o ../../report_build'
-
             }
         }
     }
