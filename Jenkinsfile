@@ -1,8 +1,6 @@
 pipeline {
     agent { docker { image 'python:3.5.1' } }
 
-    environment {
-        JAVA_HOME = "usr/lib/jvm/java-1.8-openjdk/jre/bin"
     }
     stages {
         stage ("Code pull"){
