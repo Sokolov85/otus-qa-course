@@ -20,7 +20,7 @@ pipeline {
                 jdk              : '',
                 properties       : [],
                 reportBuildPolicy: 'ALWAYS',
-                results          : [[path: 'report_build']]
+                results          : [[path: 'report']]
             ])
         }
     }
